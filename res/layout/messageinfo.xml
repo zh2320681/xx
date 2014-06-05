@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+    <RelativeLayout 
+        android:id="@+id/ml_layout"
+        style="@style/topBg" >
+
+        <Button 
+            android:id="@+id/ml_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/mi_title"
+            style="@style/topTextView"
+            android:gravity="center"
+            android:ellipsize="marquee" 
+       		android:focusable="true" 
+        	android:marqueeRepeatLimit="marquee_forever" 
+        	android:singleLine="true"
+        	android:focusableInTouchMode="true" 
+       	 	android:scrollHorizontally="true"
+            android:text="安全消息" 
+            android:ems="5"
+            />
+    </RelativeLayout>
+
+	<WebView 
+	    android:id="@+id/mi_content"
+	    android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@id/ml_layout"
+    	android:layout_margin="10dip"
+	    />
+	
+	<include layout="@layout/request"/>
+</RelativeLayout>

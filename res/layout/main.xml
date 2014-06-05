@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tt100="http://schemas.android.com/apk/res/com.axb.android"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1ECE1"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout style="@style/topBg" >
+
+        <Button
+            android:id="@+id/main_back"
+            style="@style/topBackBtn"
+            android:visibility="invisible" />
+
+        <TextView
+            style="@style/topTextView"
+            android:text="安全学习" />
+
+        <Button
+            android:id="@+id/main_reflash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/reflash_btn"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_line_bg"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_task"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_task"
+                tt100:showNum="show"
+                tt100:textInfo="规定任务" />
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_case"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_case"
+                tt100:showNum="show"
+                tt100:textInfo="案列借鉴" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_question"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_question"
+                tt100:showNum="hide"
+                tt100:textInfo="每日一题" />
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_study"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_study"
+                tt100:showNum="hide"
+                tt100:textInfo="自我学习" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_safe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_safe"
+                tt100:showNum="show"
+                tt100:textInfo="安全信息" />
+
+            <com.axb.android.ui.custom.MainItemLayout
+                android:id="@+id/main_rank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tt100:iconSrc="@drawable/main_rank"
+                tt100:showNum="hide"
+                tt100:textInfo="排行榜" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_user_bg"
+        android:padding="5dip"
+        android:layout_weight="4" >
+
+        <com.axb.android.ui.custom.RoundImageView
+            android:id="@+id/main_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dip"
+            android:scaleType="centerInside"
+            imagecontrol:border_inside_color="#70000000"
+            imagecontrol:border_outside_color="#FFFFFF"
+            imagecontrol:border_thickness="1dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

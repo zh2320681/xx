@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout
+        android:id="@+id/sl_layout"
+        style="@style/topBg" >
+
+        <Button
+            android:id="@+id/sl_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/sl_title"
+            style="@style/topTextView"
+            android:text="自我学习" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_focus"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/sl_middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sl_layout"
+        android:background="#EEE5D7"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_weight="1"
+                android:background="@drawable/casereference_itembg"
+                android:gravity="center_vertical"
+                android:padding="10dip" >
+
+                <EditText
+                    android:id="@+id/sl_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入搜索关键字"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_weight="5"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/sl_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sl_search_bg"
+                    android:padding="10dip"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 分类 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/sl_sp1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/sl_sp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_gravity="bottom"
+            android:background="#9D9891" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/sl_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sl_middle"
+        android:layout_margin="10dip"
+        android:background="@drawable/undone_bg"
+        android:cacheColorHint="@color/alpha_00"
+        android:divider="#E2D8C9"
+        android:dividerHeight="0.5sp" />
+    <include layout="@layout/request" />
+
+</RelativeLayout>

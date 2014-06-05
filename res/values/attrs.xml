@@ -1,0 +1,41 @@
+<resources>
+
+    <attr name="iconPosition">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="showNum">
+        <enum name="show" value="1" />
+        <enum name="hide" value="0" />
+    </attr>
+
+    <declare-styleable name="main_item">
+        <attr name="iconSrc" format="reference" />
+        <attr name="numIconSrc" format="reference" />
+        <attr name="showNum" />
+        <attr name="textInfo" format="string" />
+        <attr name="textColor" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="circle_top">
+        <attr name="circleName" format="string" />
+    </declare-styleable>
+    <declare-styleable name="diner_step">
+        <attr name="icon" format="reference" />
+        <attr name="textStep" format="string" />
+        <attr name="textTime" format="string" />
+    </declare-styleable>
+    <declare-styleable name="diner_table">
+        <attr name="tableName" format="string" />
+        <attr name="tableNumber" format="string" />
+        <attr name="tableCapacity" format="string" />
+        <attr name="tableStatus" format="string" />
+        <attr name="tableIcon" format="reference" />
+    </declare-styleable>
+    <!-- 图片圆角 -->
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+</resources>

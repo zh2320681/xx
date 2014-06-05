@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="alpha_00">#00000000</color>
+    <color name="undone_text">#5B5B6A</color>
+    <color name="undone_text1">#757C92</color>
+    <color name="person_text">#535E80</color>
+    <color name="person_star">#FFE950</color>
+    <color name="undone_pre">#F49121</color>
+    <color name="transparent_background">#80000000</color>
+    <color name="ranking_detailcolor">#928E86</color>
+    <color name="ranking_btncolor">#475C6B</color>
+    <color name="ranking_ap_item">#535A87</color>
+    
+    <color name="list_select_color">#928E86</color>
+    <color name="list_nor_color">#FFFFED</color>
+    
+    <color name="list_firstnor_color">#FFDFDE</color>
+     
+    <color name="list_firsttext_color">#96685D</color>
+
+</resources>

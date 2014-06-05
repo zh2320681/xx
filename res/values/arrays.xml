@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="pagesizes">
+		<item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>15</item>
+ </string-array>  
+  
+<string-array name="searchType">
+		<item>显示所有用户</item>
+        <item>显示所有在线用户</item>
+        <item>根据所在公司搜索</item>
+        <item>根据所在部门搜索</item>
+        <item>根据用户名搜索</item>
+ </string-array>  
+ 
+
+<string-array name="sp1">
+    	<item>请选择</item>
+		<item>变电</item>
+        <item>线路</item> 
+        <item>营销</item>
+        <item>基建</item>
+ </string-array>  
+ 
+
+<string-array name="sp2">
+		<item>请选择</item>
+        <item>人身</item>
+        <item>电网</item>
+        <item>设备</item>
+        <item>误操作</item>
+ </string-array>  
+ 
+</resources>

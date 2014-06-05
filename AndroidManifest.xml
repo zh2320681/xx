@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.axb.android"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.axb.android.MyApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher1"
+        android:theme="@android:style/Theme.NoTitleBar" >
+
+        <!-- LaucherActivity -->
+        <activity
+            android:name=".ui.LauncherActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+            
+        <activity android:name=".ui.MessageListActivity" />
+        <activity android:name=".ui.UndoneTaskActivity" />
+        <activity android:name=".ui.PersonInfoActivity" />
+        <!--  -->
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.DailyCaseActivity" />
+        <activity android:name=".ui.MessageInfoActivity" />
+        <activity android:name=".ui.StudyRecordActivity" />
+        <activity android:name=".ui.CaseStudyActivity" />
+        <activity android:name=".ui.FileStudyActivity" />
+        <activity android:name=".ui.AnguiStudyActivity" />
+        <activity android:name=".ui.ShowWebImageActivity" />
+        <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".ui.ImageOperatorActivity" />
+        <activity android:name=".ui.RateLevelAcitvity" />
+        <activity android:name=".ui.SelfMainActivity" />
+        <activity android:name=".ui.SelfListActivity" />
+        <activity android:name=".ui.ModifyPwActivity" />
+        <activity android:name=".ui.CaseReferenceActivity" />
+        <activity android:name=".ui.RankingActivity" />
+        <activity android:name=".ui.DepartRankingActivity" />
+    </application>
+
+</manifest>

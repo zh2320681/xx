@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+    <RelativeLayout style="@style/topBg" >
+
+        <Button 
+            android:id="@+id/main_back"
+            style="@style/topBackBtn"
+            android:visibility="invisible" />
+
+        <TextView
+            style="@style/topTextView"
+            android:text="安全学习" />
+        
+        <Button
+            android:id="@+id/main_reflash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/reflash_btn"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <!-- 中间内容 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/main_undone"
+                    style="@style/main_btn"
+                    android:text="未完任务" />
+
+                <TextView
+                    android:id="@+id/main_undone_msg"
+                    style="@style/main_notice"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/main_record"
+                    style="@style/main_btn"
+                    android:text="学习记录" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/main_safe"
+                    style="@style/main_btn"
+                    android:text="安全信息" />
+
+                <TextView
+                    android:id="@+id/main_safe_msg"
+                    style="@style/main_notice"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/main_self"
+                    style="@style/main_btn"
+                    android:text="自我学习" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/main_personal"
+                    style="@style/main_btn"
+                    android:text="个人资料" />
+            </RelativeLayout>
+        </LinearLayout>
+ 
+    	<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="bottom" >
+    	    <include 
+            	layout="@layout/request"/>
+    	</LinearLayout>
+        
+    </LinearLayout>
+
+</LinearLayout>

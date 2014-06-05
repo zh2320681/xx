@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dip"
+    android:layout_marginTop="10dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/qe_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dip"
+        android:layout_marginTop="5dip"
+        android:text="1. 测试题目测试题目测试题目测试题目测试题目测试题目"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg" >
+
+        <EditText
+            android:id="@+id/qe_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:background="@null"
+            android:gravity="left|top"
+            android:lines="5"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

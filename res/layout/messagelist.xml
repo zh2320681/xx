@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+    <RelativeLayout 
+        android:id="@+id/ml_layout"
+        style="@style/topBg" >
+
+        <Button 
+            android:id="@+id/ml_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            style="@style/topTextView"
+            android:text="安全消息" />
+    </RelativeLayout>
+
+    <!-- 中间内容 
+    <ScrollView 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_marginLeft="10dip"
+    	android:layout_marginRight="10dip" 
+    	android:background="@drawable/undone_bg">
+        <LinearLayout 
+            android:id="@+id/ml_content"
+            android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+    		android:orientation="vertical"
+    		
+    		android:layout_marginTop="10dip"
+    		android:layout_marginBottom="10dip"
+            />
+        
+    </ScrollView>-->
+
+	<ListView 
+	    android:id="@+id/ml_list"
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@id/ml_layout"
+    	android:background="@drawable/undone_bg"
+    	android:layout_margin="10dip"
+    	android:cacheColorHint="@color/alpha_00"
+	    />
+	
+	<include layout="@layout/request"/>
+</RelativeLayout>

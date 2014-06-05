@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout
+        android:id="@+id/ssm_layout"
+        style="@style/topBg"
+        android:layout_marginBottom="5dip" >
+
+        <Button
+            android:id="@+id/ssm_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/ssm_title"
+            style="@style/topTextView"
+            android:text="自我学习" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/sm_todaycase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:background="@drawable/main_tag_btn"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:gravity="center_vertical"
+                android:text="每日一题"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ssm_daily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="已连续学习12天，共有5天未学习"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ssm_todayCase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/ssm_todayname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dip"
+                android:gravity="center_vertical"
+                android:text="今日案例:"
+                android:textColor="@android:color/black"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/ssm_todayicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dip"
+                android:gravity="center_vertical"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/ssm_todayDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dip"
+                android:layout_toLeftOf="@id/ssm_todayicon"
+                android:layout_toRightOf="@id/ssm_todayname"
+                android:gravity="center_vertical"
+                android:text="未戴安全帽从高处坠落致死"
+                android:textColor="@android:color/black"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ssm_caseStudy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:background="@drawable/main_tag_btn" >
+
+        <TextView
+            android:id="@+id/ssm_casename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:gravity="center_vertical"
+            android:text="案例学习"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/ssm_caseicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dip"
+            android:gravity="center_vertical"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/ssm_caseDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:layout_toLeftOf="@id/ssm_caseicon"
+            android:layout_toRightOf="@id/ssm_casename"
+            android:gravity="center_vertical"
+            android:text="已自学了53个案列"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ssm_safety"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:background="@drawable/main_tag_btn" >
+
+        <TextView
+            android:id="@+id/ssm_safetyname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:gravity="center_vertical"
+            android:text="安规学习"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/ssm_safetyicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dip"
+            android:gravity="center_vertical"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/ssm_safetyDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:layout_toLeftOf="@id/ssm_safetyicon"
+            android:layout_toRightOf="@id/ssm_safetyname"
+            android:gravity="center_vertical"
+            android:text="已自学了53个安规"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ssm_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:background="@drawable/main_tag_btn" >
+
+        <TextView
+            android:id="@+id/ssm_filename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:gravity="center_vertical"
+            android:text="文件学习"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/ssm_fileicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dip"
+            android:gravity="center_vertical"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/fileDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:layout_toLeftOf="@id/ssm_fileicon"
+            android:layout_toRightOf="@id/ssm_filename"
+            android:gravity="center_vertical"
+            android:text="已自学了53个文件"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

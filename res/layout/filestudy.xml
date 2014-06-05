@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout
+        android:id="@+id/fs_layout"
+        style="@style/topBg" >
+
+        <Button
+            android:id="@+id/fs_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/mi_title"
+            style="@style/topTextView"
+            android:text="文件学习" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/fs_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fs_layout"
+        android:layerType="software" />
+
+    <include layout="@layout/request" />
+
+</LinearLayout>

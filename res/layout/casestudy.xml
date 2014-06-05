@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout
+        android:id="@+id/cs_layout"
+        style="@style/topBg" >
+
+        <Button
+            android:id="@+id/cs_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/cs_title"
+            style="@style/topTextView"
+            android:text="案例学习" />
+    </RelativeLayout>
+
+    <!-- tab选择页面 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cs_caseBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="安规"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/cs_analysisBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="测试"
+                android:textColor="@color/undone_text1"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/cs_answerBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="答案"
+                android:textColor="@color/undone_text1"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 第一个 案例展示 -->
+
+        <WebView
+            android:id="@+id/cs_case"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             android:layerType="software"  />
+        <!-- 第一个 案例分析 -->
+
+        <RelativeLayout
+            android:id="@+id/cs_analysisLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/cs_commitLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/analysis_bg"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/cs_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/analysis_btn"
+                    android:text="保存"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/cs_commit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/analysis_btn"
+                    android:text="提交"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/cs_commitLayout" >
+
+                <LinearLayout
+                    android:id="@+id/cs_questionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <include
+                android:layout_alignParentBottom="true"
+                layout="@layout/request"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <!-- 第三个个 案例答案 -->
+
+        <FrameLayout
+            android:id="@+id/cs_answerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/cs_answerImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/no_answer_img" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/cs_answerContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dip"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

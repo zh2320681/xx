@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout style="@style/topBg" >
+
+        <Button
+            android:id="@+id/ranking_backBtn"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/ranking_titleView"
+            style="@style/topTextView"
+            android:text="排行榜" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ranking_topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/ranking_perBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/ranking_down_nor"
+            android:text="个人排名"
+            android:textColor="@color/ranking_detailcolor"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/ranking_teamBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/ranking_down_nor"
+            android:text="团队排名"
+            android:textColor="@color/ranking_detailcolor"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.7"
+            android:background="@drawable/border_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dip"
+            android:paddingLeft="1dip"
+            android:paddingRight="5dip"
+            android:paddingTop="5dip" >
+
+            <ImageView
+                android:id="@+id/ranking_searchBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ranking_search" />
+
+            <EditText
+                android:id="@+id/ranking_searchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入姓名查询"
+                android:paddingLeft="3dip"
+                android:textColorHint="@color/ranking_detailcolor"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ranking_taskOkBtn"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="2dip"
+                android:layout_weight="1"
+                android:background="@drawable/border_blue"
+                android:text="任务完成"
+                android:textColor="@color/ranking_btncolor"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ranking_dailyCaseBtn"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="2dip"
+                android:layout_weight="1"
+                android:background="@drawable/border_blue"
+                android:text="每日一题"
+                android:textColor="@color/ranking_btncolor"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/ranking_mStudyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="2dip"
+                android:layout_weight="1"
+                android:background="@drawable/border_blue"
+                android:text="自我学习"
+                android:textColor="@color/ranking_btncolor"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/border_white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="排名"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/ranking_mlistName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.7"
+                android:gravity="center"
+                android:text="姓   名"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.7"
+                android:gravity="center"
+                android:text="所属团队"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.7"
+                android:gravity="center"
+                android:text="任务完成"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.7"
+                android:gravity="center"
+                android:text="每日一题"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.7"
+                android:gravity="center"
+                android:text="自我学习"
+                android:textColor="@color/ranking_detailcolor"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/ranking_mList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:divider="#E2D8C9"
+            android:dividerHeight="0.5sp" />
+    </LinearLayout>
+
+</LinearLayout>

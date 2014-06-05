@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg"
+        android:orientation="vertical" >
+
+        <!-- 抬头 公用 -->
+
+        <RelativeLayout
+            android:id="@+id/ml_layout"
+            style="@style/topBg" >
+
+            <Button
+                android:id="@+id/sr_back"
+                style="@style/topBackBtn" />
+
+            <TextView
+                android:id="@+id/mi_title"
+                style="@style/topTextView"
+                android:text="学习记录" />
+        </RelativeLayout>
+
+        <!-- tab选择页面 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dip" >
+
+                <Button
+                    android:id="@+id/sr_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/down_nor"
+                    android:text="时间"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/sr_case"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/down_nor"
+                    android:text="案例"
+                    android:textColor="@color/undone_text1"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/sr_angui"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/down_nor"
+                    android:text="安规"
+                    android:textColor="@color/undone_text1"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/sr_study"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/down_nor"
+                    android:text="文件"
+                    android:textColor="@color/undone_text1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/record_title"
+            android:text="记录信息" />
+
+        <ListView
+            android:id="@+id/sr_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:divider="@color/alpha_00"
+            android:dividerHeight="20dip" />
+    </LinearLayout>
+
+    <include layout="@layout/request" />
+
+</RelativeLayout>

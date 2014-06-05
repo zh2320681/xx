@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_marginTop="10dip"
+    android:layout_marginBottom="10dip">
+    <TextView 
+        android:id="@+id/qc_title"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:textColor="@color/black"
+    	android:text="1. 测试题目测试题目测试题目测试题目测试题目测试题目"
+    	android:textSize="15sp"
+    	android:layout_marginTop="5dip"
+    	android:layout_marginBottom="3dip"
+        />
+	
+</LinearLayout>

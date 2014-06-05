@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <!-- 抬头 公用 -->
+
+    <RelativeLayout
+        android:id="@+id/ags_layout"
+        style="@style/topBg" >
+
+        <Button
+            android:id="@+id/ags_back"
+            style="@style/topBackBtn" />
+
+        <TextView
+            android:id="@+id/ags_title"
+            style="@style/topTextView"
+            android:text="安规学习" />
+    </RelativeLayout>
+
+    <!-- tab选择页面 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip" >
+
+            <Button
+                android:id="@+id/ags_anguiBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="安规"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/ags_testBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="测试"
+                android:textColor="@color/undone_text1"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/ags_answerBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/down_nor"
+                android:text="答案"
+                android:textColor="@color/undone_text1"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <!-- 第一个 案例展示 -->
+
+        <WebView
+            android:id="@+id/ags_angui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layerType="software" />
+        <!-- 第一个 案例分析 -->
+
+        <RelativeLayout
+            android:id="@+id/ags_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/ags_commitLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/analysis_bg"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/ags_commit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/analysis_btn"
+                    android:text="提交"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/ags_commitLayout" >
+
+                <LinearLayout
+                    android:id="@+id/ags_questionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <include
+                android:layout_alignParentBottom="true"
+                layout="@layout/request"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <!-- 第三个个 案例答案 -->
+
+        <FrameLayout
+            android:id="@+id/ags_answerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/ags_answerImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/no_answer_img" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/ags_answerContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dip"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

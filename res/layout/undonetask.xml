@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg"
+        android:orientation="vertical" >
+
+        <!-- 抬头 公用 -->
+
+        <RelativeLayout style="@style/topBg" >
+
+            <Button
+                android:id="@+id/ut_back"
+                style="@style/topBackBtn" />
+
+            <TextView
+                android:id="@+id/ut_title"
+                style="@style/topTextView"
+                android:text="未完任务" />
+        </RelativeLayout>
+
+        <!-- 中间内容 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- 管理员设置的提醒语 -->
+
+            <LinearLayout
+                android:id="@+id/ut_msgLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/message_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/ut_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:gravity="center_vertical"
+                    android:text="管理员消息: 暂无"
+                    android:textColor="@color/red"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 中间内容 -->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dip"
+                    android:orientation="vertical" >
+
+                    <!-- 案例学习 -->
+
+                    <TextView
+                        style="@style/undone_title"
+                        android:text="案例学习" />
+
+                    <LinearLayout style="@style/undone_content" >
+
+                        <LinearLayout
+                            android:id="@+id/ut_caseContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dip"
+                            android:layout_marginBottom="5dip"
+                            android:orientation="vertical"
+                            >
+                            <!-- 案例学习 -->
+
+                            <TextView
+                                android:id="@+id/ut_caseInfo"
+                                style="@style/undone_notice"
+                                android:text="无需要完成的案例" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 安规学习 -->
+
+                    <TextView
+                        style="@style/undone_title"
+                        android:text="安规学习" />
+
+                    <LinearLayout style="@style/undone_content" >
+
+                        <LinearLayout
+                            android:id="@+id/ut_anguiContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dip"
+                            android:layout_marginBottom="5dip"
+                            android:orientation="vertical" >
+
+                            <!-- 案例学习 -->
+
+                            <TextView
+                                android:id="@+id/ut_anguiInfo"
+                                style="@style/undone_notice"
+                                android:text="无需要完成的安规" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 文件学习 -->
+
+                    <TextView
+                        style="@style/undone_title"
+                        android:text="文件学习 " />
+
+                    <LinearLayout style="@style/undone_content" >
+
+                        <LinearLayout
+                            android:id="@+id/ut_fileContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dip"
+                            android:layout_marginBottom="5dip"
+                            android:orientation="vertical" >
+
+                            
+                            <!-- 案例学习 -->
+
+                            <TextView
+                                android:id="@+id/ut_fileInfo"
+                                style="@style/undone_notice"
+                                android:text="无需要学习的文件" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            </ScrollView>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <include layout="@layout/request" />
+
+</RelativeLayout>
