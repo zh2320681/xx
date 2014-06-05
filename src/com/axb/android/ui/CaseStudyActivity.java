@@ -39,6 +39,7 @@ public class CaseStudyActivity extends BaseActivity {
 
 //	private boolean isSelf; // 是否是自学
 	private int answerFlag;//跳转标识
+	private String aljjGuid;
 
 	private View caseLayout, analysisLayout, answerLayout, commitLayout;
 	private Button backBtn, caseeBtn, analysisBtn, answerBtn, commitBtn,
@@ -127,6 +128,13 @@ public class CaseStudyActivity extends BaseActivity {
 
 		mCaseDto = (CaseDto) getIntent().getSerializableExtra("TaskDto");
 		answerFlag = getIntent().getIntExtra("answerFlag", SelfListActivity.SELF_FLAG);
+		
+		try {
+			aljjGuid = getIntent().getStringExtra("aljjGuid");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+		}
 		init();
 		addHandler();
 	}
@@ -239,6 +247,9 @@ public class CaseStudyActivity extends BaseActivity {
 				mBaseBo.maps.put("password", mApplication.mSetting.password);
 				mBaseBo.maps.put("caseGuid", mCaseDto.guid);
 				mBaseBo.maps.put("answerFlag", answerFlag+"");
+				if(aljjGuid!=null){
+					mBaseBo.maps.put("aljjGuid", aljjGuid);
+				}
 				mGetCaseContentTask.execute(mBaseBo);
 			}
 			break;
