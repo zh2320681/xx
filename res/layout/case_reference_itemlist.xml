@@ -18,7 +18,7 @@
             android:layout_margin="5dip"
             android:gravity="center_vertical"
             android:text="2014.4.15"
-            android:textColor="#88837B"
+            android:textColor="@color/aljj_grey"
             android:textSize="14sp" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:lines="3"
-            android:textColor="#88837B"
+            android:textColor="@color/aljj_grey"
             android:text="各单位认真学习11.15安全dddddddddddddddddddd事故"
             android:textSize="14sp" />
 

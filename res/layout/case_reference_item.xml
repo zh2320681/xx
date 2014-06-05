@@ -21,7 +21,7 @@
             android:gravity="center_vertical"
             android:text="2014.4.15"
             android:textColor="#6C6963"
-            android:textSize="14sp" />d
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/csrfi_title"
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
     </LinearLayout>
 
 </LinearLayout>

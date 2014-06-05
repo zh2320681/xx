@@ -21,5 +21,7 @@
     <color name="list_firstnor_color">#FFDFDE</color>
      
     <color name="list_firsttext_color">#96685D</color>
+    
+    <color name="aljj_grey">#303030</color>
 
 </resources>
