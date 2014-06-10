@@ -76,7 +76,7 @@ public class UndoneTaskActivity extends BaseActivity {
 		requestLayout.setVisibility(View.GONE);
 		
 		if(isUnDone){
-			titleView.setText("未完任务");
+			titleView.setText("规定任务");
 		}else{
 			titleView.setText("学习记录");
 		}

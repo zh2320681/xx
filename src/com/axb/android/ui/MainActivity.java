@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.axb.android.R;
@@ -22,7 +21,7 @@ public class MainActivity extends BaseActivity {
 	public static boolean isUpdateCount; // 是否更新数据
 	// private Button
 	// backBtn,unDoneBtn,recordBtn,safeBtn,personalBtn,reflashBtn,selfBtn;
-	private Button backBtn;
+	private Button backBtn,reflashBtn;
 	// private TextView unDoneView,safeMsgView;
 
 	private RoundImageView mFace;// 圆形头像
@@ -32,8 +31,8 @@ public class MainActivity extends BaseActivity {
 			mSafeInfo, mRanking;
 
 //	private LinearLayout bottomView;
-//	private View requestLayout;
-//	private TextView requestInfo;
+	private View requestLayout;
+	private TextView requestInfo;
 
 	private OnClickListener mClick = new OnClickListener() {
 
@@ -81,6 +80,8 @@ public class MainActivity extends BaseActivity {
 				Intent i = new Intent();
 				i.setClass(MainActivity.this, PersonInfoActivity.class);
 				startActivity(i);
+			} else if(v == reflashBtn){
+				requestMainCountTask();
 			}
 		}
 	};
@@ -111,11 +112,13 @@ public class MainActivity extends BaseActivity {
 		mSafeInfo = (MainItemLayout) findViewById(R.id.main_safe);
 		mRanking = (MainItemLayout) findViewById(R.id.main_rank);
 		mFace = (RoundImageView) findViewById(R.id.main_face);
+		
+		reflashBtn = (Button) findViewById(R.id.main_reflash);
 		// bottomView = (LinearLayout) findViewById(R.id.main_bottomView);
 
-		// requestLayout = findViewById(R.id.load_requestLayout);
-		// requestInfo = (TextView) findViewById(R.id.load_requestInfo);
-		// requestLayout.setVisibility(View.GONE);
+		 requestLayout = findViewById(R.id.load_requestLayout);
+		 requestInfo = (TextView) findViewById(R.id.load_requestInfo);
+		 requestLayout.setVisibility(View.GONE);
 		
 	}
 
@@ -129,6 +132,8 @@ public class MainActivity extends BaseActivity {
 		mSafeInfo.setOnClickListener(mClick);
 		mRanking.setOnClickListener(mClick);
 		mFace.setOnClickListener(mClick);
+		
+		reflashBtn.setOnClickListener(mClick);
 	}
 
 	@Override
@@ -138,13 +143,7 @@ public class MainActivity extends BaseActivity {
 		if (isUpdateCount) {
 			isUpdateCount = false;
 
-			MainCountTask mMainCountTask = new MainCountTask(this, "设置消息已读",
-					"正在获取记录信息,请稍等...", BaseAsyncTask.PRE_TASK_CUSTOM);
-			BaseBo mBaseBo = new BaseBo();
-			mBaseBo.requestUrl = Command.getAction(Command.COMMAND_MAIN_COUNT);
-			mBaseBo.maps.put("userName", mApplication.mSetting.account);
-			mBaseBo.maps.put("password", mApplication.mSetting.password);
-			mMainCountTask.execute(mBaseBo);
+			requestMainCountTask();
 		} else {
 			if (mApplication.unReadTask > 0) {
 				mFixTask.getNumView().setText(mApplication.unReadTask + "");
@@ -172,6 +171,16 @@ public class MainActivity extends BaseActivity {
 		}
 	}
 
+	private void requestMainCountTask(){
+		MainCountTask mMainCountTask = new MainCountTask(this, "请求信息",
+				"正在获取未读数量信息,请稍等...", BaseAsyncTask.PRE_TASK_CUSTOM);
+		BaseBo mBaseBo = new BaseBo();
+		mBaseBo.requestUrl = Command.getAction(Command.COMMAND_MAIN_COUNT);
+		mBaseBo.maps.put("userName", mApplication.mSetting.account);
+		mBaseBo.maps.put("password", mApplication.mSetting.password);
+		mMainCountTask.execute(mBaseBo);
+	}
+	
 	private void showExit() {
 
 		Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -195,10 +204,10 @@ public class MainActivity extends BaseActivity {
 	 * @param info
 	 */
 	public void showRequestUi(String info) {
-		// requestInfo.setText(info);
-		// if (!requestLayout.isShown()) {
-		// requestLayout.setVisibility(View.VISIBLE);
-		// }
+		requestInfo.setText(info);
+		if (!requestLayout.isShown()) {
+			requestLayout.setVisibility(View.VISIBLE);
+		}
 	}
 
 	/**
@@ -207,7 +216,7 @@ public class MainActivity extends BaseActivity {
 	 * @param info
 	 */
 	public void hideRequestUi() {
-		// requestLayout.setVisibility(View.GONE);
+		 requestLayout.setVisibility(View.GONE);
 	}
 
 	public void taskSuccessDoing(int unReadTask, int unReadMsg,int unReadALJJ) {
