@@ -21,7 +21,7 @@
             <TextView
                 android:id="@+id/ut_title"
                 style="@style/topTextView"
-                android:text="未完任务" />
+                android:text="规定任务" />
         </RelativeLayout>
 
         <!-- 中间内容 -->
