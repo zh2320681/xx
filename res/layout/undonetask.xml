@@ -21,7 +21,7 @@
             <TextView
                 android:id="@+id/ut_title"
                 style="@style/topTextView"
-                android:text="规定任务" />
+                android:text="未完任务" />
         </RelativeLayout>
 
         <!-- 中间内容 -->
@@ -61,6 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dip"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
                     android:orientation="vertical" >
 
                     <!-- 案例学习 -->
