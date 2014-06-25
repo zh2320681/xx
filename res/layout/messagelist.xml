@@ -16,7 +16,7 @@
 
         <TextView
             style="@style/topTextView"
-            android:text="安全消息" />
+            android:text="安全信息" />
     </RelativeLayout>
 
     <!-- 中间内容 

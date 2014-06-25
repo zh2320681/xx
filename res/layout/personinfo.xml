@@ -82,6 +82,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:paddingTop="2dip"
+                        android:paddingBottom="2dip"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 
@@ -107,6 +109,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:visibility="gone"
+                        
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 
@@ -133,6 +137,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:paddingTop="2dip"
+                        android:paddingBottom="2dip"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 
@@ -158,6 +164,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:paddingTop="2dip"
+                        android:paddingBottom="2dip"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 
@@ -183,6 +191,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:paddingTop="2dip"
+                        android:paddingBottom="2dip"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" >
 

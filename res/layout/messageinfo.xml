@@ -23,7 +23,7 @@
         	android:singleLine="true"
         	android:focusableInTouchMode="true" 
        	 	android:scrollHorizontally="true"
-            android:text="安全消息" 
+            android:text="安全信息" 
             android:ems="5"
             />
     </RelativeLayout>
