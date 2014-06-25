@@ -1,5 +1,7 @@
 package com.axb.android.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -115,7 +117,19 @@ public class ModifyPwActivity extends BaseActivity {
 		 * 修改缓存 密码设置
 		 * 本地缓存密码 更改  要求下次登录
 		 */
-		Toast.makeText(ModifyPwActivity.this, "密码修改成功!", Toast.LENGTH_SHORT).show();
+//		Toast.makeText(ModifyPwActivity.this, "密码修改成功!", Toast.LENGTH_SHORT).show();
+		AlertDialog.Builder build = new AlertDialog.Builder(this);
+		build.setTitle("密码修改")
+				.setMessage("密码修改成功!")
+				.setPositiveButton("确定",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								
+							}
+						});
+		build.create().show();
 //		String newStr = newView.getText().toString();
 		oldView.setText(null);
 		newView.setText(null);

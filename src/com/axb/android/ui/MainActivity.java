@@ -152,7 +152,7 @@ public class MainActivity extends BaseActivity {
 			}
 
 			if (mApplication.unReadMsg > 0) {
-				mSafeInfo.getNumView().setText(mApplication.unReadMsg);
+				mSafeInfo.getNumView().setText(mApplication.unReadMsg+"");
 			} else {
 				mSafeInfo.getNumView().setVisibility(View.GONE);
 			}

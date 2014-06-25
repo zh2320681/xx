@@ -144,7 +144,7 @@ public class RankingActivity extends BaseActivity {
 			public void afterTextChanged(Editable arg0) {
 				// TODO Auto-generated method stub
 				if(rankIndex == TEAM_RANKING){
-					loadDepartsRanking();
+					loadDepartsRanking(TEAM_RANKING);
 				}else{
 					loadUsersRanking();
 				}
@@ -193,7 +193,7 @@ public class RankingActivity extends BaseActivity {
 		hasLoadUserRanking = false;
 		hasLoadDepartRanking = false;
 
-		rankIndex = TEAM_RANKING;
+		rankIndex = PER_RANKING;
 		orderIndex = TASK_ORDER;
 		// requestDepartRanking();
 		selectRanking(rankIndex, orderIndex);
@@ -356,7 +356,7 @@ public class RankingActivity extends BaseActivity {
 		// List<User> userList =
 		// mApplication.mDatabaseAdapter.getUsersByOrder("selfNum",null,null);
 		// 按排序要求取
-		List<User> cacheUsers = orderRanking();
+		List<User> cacheUsers = orderRanking(PER_RANKING);
 		// 将本人加入到此List中
 		int myRanking = 0;
 		String username = mApplication.mLoginUser.nickname;
@@ -402,12 +402,12 @@ public class RankingActivity extends BaseActivity {
 							wholeDeparts = JSON.parseArray(arg0.data,
 									DepartmentRanking.class);
 							hasLoadDepartRanking = true;
-							loadDepartsRanking();
+							loadDepartsRanking(TEAM_RANKING);
 						}
 					}, mApplication.mLoginUser.loginname,
 					mApplication.mLoginUser.password, departGuid);
 		} else {
-			loadDepartsRanking();
+			loadDepartsRanking(TEAM_RANKING);
 		}
 	}
 
@@ -416,18 +416,18 @@ public class RankingActivity extends BaseActivity {
 	 * 
 	 * @return
 	 */
-	private <T extends Ranking> List<T> orderRanking() {
+	private <T extends Ranking> List<T> orderRanking(int rankingIndex) {
 		String keyword1 = searchInput.getText().toString();
 		List<T> cacheList = new ArrayList<T>();
 
-		List<T> iteration = (List<T>) (rankIndex == TEAM_RANKING ? wholeDeparts
+		List<T> iteration = (List<T>) (rankingIndex == TEAM_RANKING ? wholeDeparts
 				: wholeUsers);
 
 		for (T t : iteration) {
 			String name = "";
 			if (t instanceof User) {
 				name = ((User) t).nickname;
-			} else {
+			} else if(t instanceof DepartmentRanking){
 				name = ((DepartmentRanking) t).departmentName;
 			}
 			if (name.indexOf(keyword1) == -1) {
@@ -515,7 +515,7 @@ public class RankingActivity extends BaseActivity {
 	// return cacheDeparts;
 	// }
 
-	private void loadDepartsRanking() {
+	private void loadDepartsRanking(int rankingIndex) {
 		/**
 		 * 如果 该部门下面 木有子部门 则显示人员排行
 		 */
@@ -526,7 +526,7 @@ public class RankingActivity extends BaseActivity {
 		}
 
 		// 按排序要求取
-		List<DepartmentRanking> cacheDeparts = orderRanking();
+		List<DepartmentRanking> cacheDeparts = orderRanking(rankingIndex);
 
 		int myRanking = -1;
 		DepartmentRanking mDepartmentRanking = null;
