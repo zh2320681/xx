@@ -17,7 +17,7 @@ import com.alibaba.fastjson.JSON;
 
 public class JSONConverter implements HttpMessageConverter<BaseResult> {
 
-	@Override
+	@Override 
 	public boolean canRead(Class<?> arg0, MediaType arg1) {
 		// TODO Auto-generated method stub
 		if(arg1 != null && arg1.includes(MediaType.APPLICATION_JSON) ){
