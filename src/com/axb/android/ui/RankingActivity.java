@@ -38,10 +38,12 @@ import com.axb.android.ui.adapter.RankingAdapter;
 
 public class RankingActivity extends BaseActivity {
 	// 是否已经加载过 用户和部门信息
-	private boolean hasLoadUserRanking, hasLoadDepartRanking;
+	private boolean hasLoadUserRanking, hasLoadDepartRanking,
+			hasLoadSMDepartRanking;
 
 	private static final byte PER_RANKING = 0x01;// 个人排行
 	private static final byte TEAM_RANKING = 0x02;// 团队排行
+	private static final byte PER_SM_RANKING = 0x03;// 个人安全管理员排行
 
 	private static final byte STUDY_ORDER = 0x03;// 自我学习
 	private static final byte TASK_ORDER = 0x04;// 任务完成
@@ -72,7 +74,7 @@ public class RankingActivity extends BaseActivity {
 
 	private int rankIndex, orderIndex;
 	private String keyword;
-	private List<DepartmentRanking> wholeDeparts;
+	private List<DepartmentRanking> wholeDeparts, wholeSMDeparts;
 	private List<User> wholeUsers;
 
 	/**
@@ -97,7 +99,7 @@ public class RankingActivity extends BaseActivity {
 				break;
 			case R.id.ranking_perBtn:
 				// 个人排名
-				selectRanking(PER_RANKING, TASK_ORDER);
+				selectRanking(isSSXSM()?PER_SM_RANKING:PER_RANKING, TASK_ORDER);
 				break;
 			case R.id.ranking_taskOkBtn:
 				// 完成任务排名
@@ -113,7 +115,7 @@ public class RankingActivity extends BaseActivity {
 				break;
 			case R.id.ranking_searchBtn:
 				// 搜索关键字
-//				finish();
+				// finish();
 				break;
 			}
 		}
@@ -143,12 +145,23 @@ public class RankingActivity extends BaseActivity {
 			@Override
 			public void afterTextChanged(Editable arg0) {
 				// TODO Auto-generated method stub
-				if(rankIndex == TEAM_RANKING){
+				switch(rankIndex){
+				case TEAM_RANKING:
 					loadDepartsRanking(TEAM_RANKING);
-				}else{
+					break;
+				case PER_RANKING:
 					loadUsersRanking();
+					break;
+				case PER_SM_RANKING:
+					loadDepartsRanking(PER_SM_RANKING);
+					break;
 				}
-				
+//				if (rankIndex == TEAM_RANKING) {
+//					loadDepartsRanking(TEAM_RANKING);
+//				} else {
+//					loadUsersRanking();
+//				}
+
 			}
 		});
 
@@ -186,14 +199,15 @@ public class RankingActivity extends BaseActivity {
 		if (departGuid == null || "".equals(departGuid)) {
 			// 首次进入
 			topLayout.setVisibility(View.VISIBLE);
+			rankIndex = isSSXSM() ? PER_SM_RANKING : PER_RANKING;
 		} else {
 			// 不是首次进入 隐藏 切换按钮
 			topLayout.setVisibility(View.GONE);
+			rankIndex = TEAM_RANKING;
 		}
 		hasLoadUserRanking = false;
 		hasLoadDepartRanking = false;
 
-		rankIndex = PER_RANKING;
 		orderIndex = TASK_ORDER;
 		// requestDepartRanking();
 		selectRanking(rankIndex, orderIndex);
@@ -270,6 +284,7 @@ public class RankingActivity extends BaseActivity {
 		if (rankIndex != rankIndexExr) {
 			// 切换前做什么
 			switch (rankIndex) {
+			case PER_SM_RANKING:
 			case PER_RANKING:
 				perBtn.setBackgroundResource(R.drawable.ranking_down_nor);
 				break;
@@ -311,6 +326,12 @@ public class RankingActivity extends BaseActivity {
 		rankIndex = rankIndexExr;
 		// 切换做什么
 		switch (rankIndex) {
+		case PER_SM_RANKING:
+			perBtn.setBackgroundResource(R.drawable.ranking_down_pre);
+			searchInput.setHint("请输入团队名查询");
+			mlistName.setVisibility(View.GONE);
+			requestSMDepartRanking();
+			break;
 		case PER_RANKING:
 			perBtn.setBackgroundResource(R.drawable.ranking_down_pre);
 			mlistName.setVisibility(View.VISIBLE);
@@ -325,6 +346,16 @@ public class RankingActivity extends BaseActivity {
 			break;
 		}
 
+	}
+
+	/**
+	 * 是否是 省市县的 安全管理员
+	 * 
+	 * @return
+	 */
+	private boolean isSSXSM() {
+		boolean isSSXSm = mApplication.mLoginUser.isSSXSm();
+		return isSSXSm && (departGuid == null || "".equals(departGuid));
 	}
 
 	/**
@@ -358,7 +389,7 @@ public class RankingActivity extends BaseActivity {
 		// 按排序要求取
 		List<User> cacheUsers = orderRanking(PER_RANKING);
 		// 将本人加入到此List中
-		int myRanking = 0;
+		int myRanking = -1;
 		String username = mApplication.mLoginUser.nickname;
 		User user = null;
 		for (int i = 0; i < cacheUsers.size(); i++) {
@@ -412,6 +443,35 @@ public class RankingActivity extends BaseActivity {
 	}
 
 	/**
+	 * 请求所有部门排行榜
+	 */
+	private void requestSMDepartRanking() {
+		if (!hasLoadSMDepartRanking) {
+			ZWAsyncTask.excuteTaskWithOutMethod(
+					this,
+					Command.getRestActionUrl(Command.COMMAND_DEPART_RANKING),
+					new TypeReference<BaseResult>() {
+					},
+					new MyDialogTaskHandler<BaseResult>("团队排行榜",
+							"正在请求团队排行榜,请稍等...") {
+
+						@Override
+						public void minePostResult(BaseResult arg0) {
+							// TODO Auto-generated method stub
+							wholeSMDeparts = JSON.parseArray(arg0.data,
+									DepartmentRanking.class);
+							hasLoadSMDepartRanking = true;
+							loadDepartsRanking(PER_SM_RANKING);
+						}
+					}, mApplication.mLoginUser.loginname,
+					mApplication.mLoginUser.password,
+					mApplication.mLoginUser.department.departmentGuid);
+		} else {
+			loadDepartsRanking(PER_SM_RANKING);
+		}
+	}
+
+	/**
 	 * 排序方法
 	 * 
 	 * @return
@@ -420,14 +480,28 @@ public class RankingActivity extends BaseActivity {
 		String keyword1 = searchInput.getText().toString();
 		List<T> cacheList = new ArrayList<T>();
 
-		List<T> iteration = (List<T>) (rankingIndex == TEAM_RANKING ? wholeDeparts
-				: wholeUsers);
+		List<T> iteration = null;
+//		(List<T>) (rankingIndex == TEAM_RANKING ? wholeDeparts
+//				: wholeUsers);
+		switch (rankingIndex) {
+		case TEAM_RANKING:
+			iteration = (List<T>)wholeDeparts;
+			break;
+		case PER_RANKING:
+			iteration = (List<T>)wholeUsers;
+			break;
+		case PER_SM_RANKING:
+			iteration = (List<T>)wholeSMDeparts;
+			break;
+		default:
+			break;
+		}
 
 		for (T t : iteration) {
 			String name = "";
 			if (t instanceof User) {
 				name = ((User) t).nickname;
-			} else if(t instanceof DepartmentRanking){
+			} else if (t instanceof DepartmentRanking) {
 				name = ((DepartmentRanking) t).departmentName;
 			}
 			if (name.indexOf(keyword1) == -1) {
@@ -519,8 +593,8 @@ public class RankingActivity extends BaseActivity {
 		/**
 		 * 如果 该部门下面 木有子部门 则显示人员排行
 		 */
-		if (departGuid != null && !"".equals(departGuid)
-				&& wholeDeparts.size() == 0) {
+		if (rankingIndex == TEAM_RANKING && departGuid != null
+				&& !"".equals(departGuid) && wholeDeparts.size() == 0) {
 			selectRanking(PER_RANKING, TASK_ORDER);
 			return;
 		}

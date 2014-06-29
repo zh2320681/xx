@@ -284,8 +284,8 @@ public class Command {
 		case COMMAND_CASE_REFERENCE:
 			action = SERVICE_URL + SUFFIX_SUFFIX + SUFFIX_PREFIX +"aljs&userName={userName}&password={password}";
 			break;	
-		case COMMAND_USERS_RANKING:
-			action = SERVICE_URL + SUFFIX_SUFFIX + SUFFIX_PREFIX +"all_rate&userName={userName}&password={password}";
+		case COMMAND_USERS_RANKING: 
+			action = SERVICE_URL + SUFFIX_SUFFIX + SUFFIX_PREFIX +"all_rate&userName={userName}&password={password}&departGuid={departGuid}";
 			break;
 		case COMMAND_DEPART_RANKING:
 			action = SERVICE_URL + SUFFIX_SUFFIX + SUFFIX_PREFIX +"all_depart_rate&userName={userName}&password={password}&departGuid={departGuid}";

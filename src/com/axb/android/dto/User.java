@@ -23,7 +23,7 @@ public class User extends Ranking{
 	public String userimg; //用户头像在手机上地址
 	public String jobguid; //昵称(直实姓名)
 	public boolean isJdgly; //是否节点管理员
-	
+	public boolean isSm;
 //	@DatabaseField(canBeNull = false)
 //	public String departmentName;//部门中文名
 	
@@ -38,6 +38,11 @@ public class User extends Ranking{
 	public int noStudyDays;//多少天没学习
 	public int dailyStudyCount;//学习多少天了
 	
-	
-
+	/**
+	 * 判断是否是省市县的 安全管理员
+	 * @return
+	 */
+	public boolean isSSXSm(){
+		return isSm && department!=null && department.levelNum != DepartmentRanking.BASE_LEVEL;
+	}
 }
