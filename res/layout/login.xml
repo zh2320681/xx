@@ -46,6 +46,7 @@
                 android:gravity="center"
                 android:hint="用户名" 
                 android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:text=""/>
 
             <EditText
@@ -58,6 +59,7 @@
                 android:gravity="center"
                 android:hint="密码"
                 android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:text="" />
         </LinearLayout>
