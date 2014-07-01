@@ -19,7 +19,7 @@ public abstract class MyDialogTaskHandler<T extends BaseResult> extends DialogTa
 		// TODO Auto-generated method stub
 		BaseResult mBaseResult = arg0.bodyObj;
 		if(mBaseResult == null || !mBaseResult.isSuccess()){
-			showNormalError(false, this.title, mBaseResult.errmessage);
+			showNormalError(false, this.title, "请求服务器端数据出错啦！");
 			return;
 		}
 //		arg0.bodyObj.mineData = JSON.parseObject(arg0.bodyObj.data, parseClazz);
