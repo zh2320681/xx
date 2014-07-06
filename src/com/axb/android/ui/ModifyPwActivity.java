@@ -121,12 +121,13 @@ public class ModifyPwActivity extends BaseActivity {
 		AlertDialog.Builder build = new AlertDialog.Builder(this);
 		build.setTitle("密码修改")
 				.setMessage("密码修改成功!")
+				.setCancelable(false)
 				.setPositiveButton("确定",
 						new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
-								
+								finish();
 							}
 						});
 		build.create().show();

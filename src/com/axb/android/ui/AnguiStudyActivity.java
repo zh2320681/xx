@@ -195,7 +195,7 @@ public class AnguiStudyActivity extends BaseActivity {
 		switch (selectIndex) {
 		case ANGUI_INDEX:
 			anguiBtn.setBackgroundResource(R.drawable.down_pre);
-			anguiBtn.setTextColor(Color.WHITE);
+			anguiBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			anguiLayout.setVisibility(View.VISIBLE);
 			String content = mCaseDto.getContent(); 
 			if(content == null){
@@ -210,7 +210,7 @@ public class AnguiStudyActivity extends BaseActivity {
 			break;
 		case TEST_INDEX:
 			testBtn.setBackgroundResource(R.drawable.down_pre);
-			testBtn.setTextColor(Color.WHITE);
+			testBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			testLayout.setVisibility(View.VISIBLE);
 //			if(CommonUtil.judgeIntAvild(mCaseDto.isFinish)){
 //				//如果已经完成  不可以提交
@@ -222,7 +222,7 @@ public class AnguiStudyActivity extends BaseActivity {
 			break;
 		case ANSWER_INDEX:
 			answerBtn.setBackgroundResource(R.drawable.down_pre);
-			answerBtn.setTextColor(Color.WHITE);
+			answerBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			answerLayout.setVisibility(View.VISIBLE);
 			answerContentLayout.setVisibility(View.VISIBLE);
 			answerImg.setVisibility(View.GONE);

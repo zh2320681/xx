@@ -233,7 +233,7 @@ public class CaseStudyActivity extends BaseActivity {
 		switch (selectIndex) {
 		case CASE_INDEX:
 			caseeBtn.setBackgroundResource(R.drawable.down_pre);
-			caseeBtn.setTextColor(Color.WHITE);
+			caseeBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			caseLayout.setVisibility(View.VISIBLE);
 
 			String content = mCaseDto.getContent();
@@ -255,7 +255,7 @@ public class CaseStudyActivity extends BaseActivity {
 			break;
 		case ANALYSIS_INDEX:
 			analysisBtn.setBackgroundResource(R.drawable.down_pre);
-			analysisBtn.setTextColor(Color.WHITE);
+			analysisBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			analysisLayout.setVisibility(View.VISIBLE);
 //			if (CommonUtil.judgeIntAvild(mCaseDto.isFinish)) {
 //				// 如果已经完成 不可以提交
@@ -267,7 +267,7 @@ public class CaseStudyActivity extends BaseActivity {
 			break;
 		case ANSWER_INDEX:
 			answerBtn.setBackgroundResource(R.drawable.down_pre);
-			answerBtn.setTextColor(Color.WHITE);
+			answerBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			answerLayout.setVisibility(View.VISIBLE);
 //			 if (!isHasLoadAnswer) {
 //			if (CommonUtil.judgeIntAvild(mCaseDto.isFinish)) {

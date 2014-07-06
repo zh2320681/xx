@@ -37,7 +37,7 @@ public class PersonInfoActivity extends BaseActivity {
 
 	private static final int MAX_IMAGE_SIZE = 1024 * 1024;
 
-	private TextView nameView, starView, rateView, companyView, jobView;
+	private TextView nameView, starView, rateView, companyView, dailyCountView,selfCountView;
 	private EditText signView;
 	private Button editView, backBtn, switchUserBtn, lookOverBtn, modifyPwBtn;
 	private Button lineBtn, captialConBtn, substationBtn, marketBtn;
@@ -60,8 +60,9 @@ public class PersonInfoActivity extends BaseActivity {
 		starView = (TextView) findViewById(R.id.pi_star);
 		rateView = (TextView) findViewById(R.id.pi_rate);
 		companyView = (TextView) findViewById(R.id.pi_company);
-		jobView = (TextView) findViewById(R.id.pi_job);
-
+		dailyCountView = (TextView) findViewById(R.id.pi_dailyNum);
+		selfCountView = (TextView) findViewById(R.id.pi_selfNum);
+		
 		signView = (EditText) findViewById(R.id.pi_sign);
 		signView.setEnabled(false);
 
@@ -92,9 +93,7 @@ public class PersonInfoActivity extends BaseActivity {
 				companyView
 						.setText(mApplication.mLoginUser.department.departmentName);
 			}
-			if (mApplication.mLoginUser.jobName != null) {
-				jobView.setText(mApplication.mLoginUser.jobName);
-			}
+			dailyCountView.setText(String.valueOf(mApplication.mLoginUser.dailyStudyCount)+"Ìì");
 		}
 
 		if (mApplication.mLoginUser != null
@@ -380,10 +379,11 @@ public class PersonInfoActivity extends BaseActivity {
 				+ fileName, faceView, false);
 	}
 
-	public void afterRateTaskDoing(String rate) {
+	public void afterRateTaskDoing(String rate,int selfCount) {
 		float f = Float.parseFloat(rate);
 		rateView.setText(CommonUtil.formatFloat(f * 100) + "%");
-		starView.setText(CommonUtil.getStudyRateStar(f));
+//		starView.setText(CommonUtil.getStudyRateStar(f));
+		selfCountView.setText(String.valueOf(selfCount));
 	}
 
 	@Override

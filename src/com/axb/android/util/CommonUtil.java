@@ -445,7 +445,20 @@ public class CommonUtil {
 	}
 
 	public static String replaceImgPath(String content, String address) {
-		return content.replace("\"/axb/Upload/", "\"" + address
+		String newContent = content;
+		if(content.toLowerCase().indexOf("<head>") != -1){
+			//估计后台 也不会有<head>标签
+			
+		}else{
+			newContent = "<html> \n" +
+					 "<head> \n" +
+					 "<style type=\"text/css\"> \n" +
+					 "body {text-align:justify; font-size: "+18+"px; line-height: "+(18+6)+"px}\n" +
+					 "</style> \n" +
+					 "</head> \n" +
+					 "<body>"+content+"</body> \n </html>";
+		}
+		return newContent.replace("\"/axb/Upload/", "\"" + address
 				+ "/axb/Upload/");
 	}
 

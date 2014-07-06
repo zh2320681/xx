@@ -186,19 +186,19 @@ public class StudyRecordActivity extends BaseActivity {
 		switch (selectIndex) {
 		case TIME_INDEX:
 			timeBtn.setBackgroundResource(R.drawable.down_pre);
-			timeBtn.setTextColor(Color.WHITE);
+			timeBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			break;
 		case CASE_INDEX:
 			caseBtn.setBackgroundResource(R.drawable.down_pre);
-			caseBtn.setTextColor(Color.WHITE);
+			caseBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			break;
 		case ANGUI_INDEX:
 			anguiBtn.setBackgroundResource(R.drawable.down_pre);
-			anguiBtn.setTextColor(Color.WHITE);
+			anguiBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			break;
 		case STUDY_INDEX:
 			studyBtn.setBackgroundResource(R.drawable.down_pre);
-			studyBtn.setTextColor(Color.WHITE);
+			studyBtn.setTextColor(getResources().getColorStateList(R.color.undone_text2));
 			break;
 		}
 		
